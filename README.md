@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Sistema de Gerenciamento de Produtos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um sistema web simples para gerenciar produtos, permitindo inserir, atualizar, buscar e listar produtos. O projeto é construído usando React e Axios para consumir uma API REST.
 
-## Available Scripts
+###  API disponível em:
+```sh
+    https://github.com/tobiasfkk/crud-produto-spring-boot
+```
 
-In the project directory, you can run:
+## Funcionalidades
 
-### `npm start`
+- **Inserir Produto**: Permite inserir um novo produto com nome e preço.
+- **Buscar Produto por ID**: Permite buscar um produto pelo seu ID.
+- **Atualizar Produto por ID**: Permite atualizar o nome e preço de um produto pelo seu ID.
+- **Listar Todos os Produtos**: Exibe uma lista de todos os produtos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Estrutura do Projeto
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- `src/App.js`: Componente principal que configura as rotas e o layout do aplicativo.
+- `src/App.css`: Arquivo de estilos CSS para o layout e componentes.
+- `src/components/InsertProduct.js`: Componente para inserir um novo produto.
+- `src/components/GetProductById.js`: Componente para buscar um produto pelo ID.
+- `src/components/UpdateProductById.js`: Componente para atualizar um produto pelo ID.
+- `src/components/ProductList.js`: Componente para listar todos os produtos.
 
-### `npm test`
+## Instalação
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone o repositório:
+    ```sh
+    git clone https://github.com/seu-usuario/seu-repositorio.git
+    ```
 
-### `npm run build`
+2. Navegue até o diretório do projeto:
+    ```sh
+    cd seu-repositorio
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Instale as dependências:
+    ```sh
+    npm install
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Inicie o servidor de desenvolvimento:
+    ```sh
+    npm start
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Uso
 
-### `npm run eject`
+1. Abra o navegador e acesse `http://localhost:3000`.
+2. Use o menu lateral para navegar entre as funcionalidades:
+    - **Inserir Produto**: Preencha os campos e clique em "Inserir".
+    - **Buscar Produto por ID**: Insira o ID do produto e clique em "Buscar".
+    - **Atualizar Produto por ID**: Preencha os campos e clique em "Atualizar".
+    - **Listar Todos os Produtos**: Veja a lista de todos os produtos.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## API
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A aplicação consome uma API REST disponível em `http://localhost:8080/api/produtos`. As rotas utilizadas são:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `POST /api/produtos`: Insere um novo produto.
+- `GET /api/produtos/:id`: Busca um produto pelo ID.
+- `POST /api/produtos/updateProdutoById`: Atualiza um produto pelo ID.
+- `GET /api/produtos/returnAllProdutos`: Retorna todos os produtos.
