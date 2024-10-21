@@ -27,12 +27,12 @@ Este é um sistema web simples para gerenciar produtos, permitindo inserir, atua
 
 1. Clone o repositório:
     ```sh
-    git clone https://github.com/seu-usuario/seu-repositorio.git
+    git clone https://github.com/tobiasfkk/crud-produto-react
     ```
 
 2. Navegue até o diretório do projeto:
     ```sh
-    cd seu-repositorio
+    cd crud-produto-react
     ```
 
 3. Instale as dependências:
