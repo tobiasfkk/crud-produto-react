@@ -5,17 +5,23 @@ function UpdateProductById() {
     const [id, setId] = useState('');
     const [nome, setNome] = useState('');
     const [preco, setPreco] = useState('');
+    const [message, setMessage] = useState(''); // Estado para armazenar a mensagem
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.put('http://localhost:8080/api/produtos/updateProdutoById', {
+            const response = await axios.post('http://localhost:8080/api/produtos/updateProdutoById', {
                 id: id,
                 nome: nome,
                 preco: preco
             });
             console.log('Produto atualizado:', response.data);
+            setMessage('Produto atualizado com sucesso!'); // Define a mensagem de sucesso
+            setId(''); // Limpa o campo ID
+            setNome(''); // Limpa o campo nome
+            setPreco(''); // Limpa o campo preço
         } catch (error) {
+            setMessage('Erro ao atualizar produto.'); // Define a mensagem de erro
             console.error('Erro ao atualizar produto:', error);
         }
     };
@@ -38,6 +44,7 @@ function UpdateProductById() {
                 </div>
                 <button type="submit">Atualizar</button>
             </form>
+            {message && <p className="message">{message}</p>} {/* Exibe a mensagem condicionalmente */}
         </div>
     );
 }

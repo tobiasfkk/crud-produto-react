@@ -20,8 +20,7 @@ function ProductList() {
                     <li key={product.id}>
                         ID: {product.id} <br/> 
                         Nome: {product.nome} <br/>
-                        Preço: {product.preco}
-                        {/* {product.nome} - {product.preco} */}
+                        Preço: R${product.preco} <br/>
                     </li>
                 ))}
             </ul>

@@ -4,16 +4,28 @@ import axios from 'axios';
 function InsertProduct() {
     const [nome, setNome] = useState('');
     const [preco, setPreco] = useState('');
+    const [message, setMessage] = useState(''); // Estado para armazenar a mensagem
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
+            if (!nome || !preco) {
+                setMessage('Nome e preço são obrigatórios!'); // Define a mensagem de erro
+                return;
+            }
+            if (isNaN(preco)) {
+                setMessage('Preço deve ser um número!'); // Define a mensagem de erro
+                return;
+            }
             const response = await axios.post('http://localhost:8080/api/produtos', {
                 nome: nome,
                 preco: preco
             });
-            console.log('Produto inserido:', response.data);
+            setMessage('Produto inserido com sucesso!'); // Define a mensagem de sucesso
+            setNome(''); // Limpa o campo nome
+            setPreco(''); // Limpa o campo preço
         } catch (error) {
+            setMessage('Erro ao inserir produto.'); // Define a mensagem de erro
             console.error('Erro ao inserir produto:', error);
         }
     };
@@ -32,6 +44,7 @@ function InsertProduct() {
                 </div>
                 <button type="submit">Inserir</button>
             </form>
+            {message && <p className="message">{message}</p>} {/* Exibe a mensagem condicionalmente */}
         </div>
     );
 }

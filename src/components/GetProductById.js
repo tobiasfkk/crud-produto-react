@@ -4,15 +4,17 @@ import axios from 'axios';
 function GetProductById() {
     const [id, setId] = useState('');
     const [product, setProduct] = useState(null);
+    const [error, setError] = useState(''); // Estado para armazenar a mensagem de erro
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8080/api/produtos/getProdutoById', {
-                id: id
-            });
+            const response = await axios.get(`http://localhost:8080/api/produtos/${id}`);
             setProduct(response.data);
+            setError(''); // Limpa a mensagem de erro
         } catch (error) {
+            setProduct(null); // Limpa o produto
+            setError('Erro ao buscar produto.'); // Define a mensagem de erro
             console.error('Erro ao buscar produto:', error);
         }
     };
@@ -27,8 +29,9 @@ function GetProductById() {
                 </div>
                 <button type="submit">Buscar</button>
             </form>
+            {error && <p className="error">{error}</p>} {/* Exibe a mensagem de erro condicionalmente */}
             {product && (
-                <div>
+                <div className="product-details">
                     <h3>Produto encontrado:</h3>
                     <p>Nome: {product.nome}</p>
                     <p>Preço: {product.preco}</p>
