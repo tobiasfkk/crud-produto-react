@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const ProdutosList = {"id": 2,"nome": "Updated Product Name","preco": 99.99}
-
 function ProductList() {
     const [products, setProducts] = useState([]);
+    const [message, setMessage] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/produtos/returnAllProdutos')
-            .then(response => setProducts(response.data))
-            .catch(error => console.error('Error fetching data:', error));
+        async function fetchProducts() {
+            try {
+                const response = await axios.get('http://localhost:8080/api/produtos/returnAllProdutos');
+                setProducts(response.data);
+                setMessage('');
+            } catch (error) {
+                setProducts([]);
+                setMessage('Erro ao buscar produtos.');
+                console.error('Erro ao buscar produtos:', error);
+            }
+        }
+        fetchProducts();
     }, []);
 
     return (
