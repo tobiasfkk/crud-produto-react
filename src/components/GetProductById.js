@@ -20,8 +20,8 @@ function GetProductById() {
     };
 
     return (
-        <div>
-            <h2>Retorna produto pelo ID</h2>
+        <div className='principal'>
+            <h1>Retorna produto pelo ID</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>ID:</label>

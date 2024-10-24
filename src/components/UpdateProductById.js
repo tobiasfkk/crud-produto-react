@@ -30,8 +30,8 @@ function UpdateProductById() {
     };
 
     return (
-        <div>
-            <h2>Update de um produto pelo ID</h2>
+        <div className = 'principal'>
+            <h1>Altera Produto</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>ID:</label>

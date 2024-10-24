@@ -21,7 +21,7 @@ function ProductList() {
     }, []);
 
     return (
-        <div>
+        <div className='principal'>
             <h1>Lista de produtos</h1>
             <ul>
                 {products.map(product => (

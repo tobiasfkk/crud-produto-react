@@ -34,8 +34,8 @@ function InsertProduct() {
     }
 
     return (
-        <div>
-            <h2>Inserir um novo produto</h2>
+        <div className='principal'>
+            <h1>Inserir Produto</h1>
             <form onSubmit={submitProductForm}>
                 <div>
                     <label>Nome:</label>

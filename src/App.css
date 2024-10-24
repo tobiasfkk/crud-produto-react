@@ -83,7 +83,9 @@ form button {
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    margin-top: 20px;
+    width: 110px;
 }
 
 form button:hover {
@@ -94,7 +96,6 @@ form button:hover {
 .product-list {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Espaçamento entre os cards */
 }
 
 .product-card {
@@ -103,7 +104,7 @@ form button:hover {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
-    margin-bottom: 10px; /* Adiciona uma leve distância entre os cards */
+    margin-bottom: 15px; /* Adiciona uma leve distância entre os cards */
 }
 
 .product-card:hover {
@@ -132,4 +133,8 @@ form button:hover {
     background-color: #f2dede;
     color: #a94442;
     border-color: #ebccd1;
+}
+
+.principal{
+    width: 100%;
 }
