@@ -14,7 +14,7 @@ function GetProductById() {
             setError(''); // Limpa a mensagem de erro
         } catch (error) {
             setProduct(null); // Limpa o produto
-            setError('Erro ao buscar produto.'); // Define a mensagem de erro
+            setError(`Erro: ${error.response.status} - ${error.response.data.message || 'Erro ao buscar produto.'}`);
             console.error('Erro ao buscar produto:', error);
         }
     };
@@ -29,7 +29,7 @@ function GetProductById() {
                 </div>
                 <button type="submit">Buscar</button>
             </form>
-            {error && <p className="error">{error}</p>} {/* Exibe a mensagem de erro condicionalmente */}
+            {error && <p className="message error">{error}</p>} {/* Exibe a mensagem de erro condicionalmente */}
             {product && (
                 <div className="product-details">
                     <h3>Produto encontrado:</h3>

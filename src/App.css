@@ -1,3 +1,10 @@
+/* Estilos globais */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
 .App {
     display: flex;
     height: 100vh;
@@ -26,24 +33,24 @@
 }
 
 .App-header nav ul li a {
-  display: block;
-  padding: 10px 15px;
-  color: white;
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.1); /* Fundo com cor mais clara e transparência */
-  border-radius: 8px; /* Bordas arredondadas */
-  transition: background-color 0.3s ease; /* Transição suave para a mudança de cor */
-  text-align: center;
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo com cor mais clara e transparência */
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease; /* Transição suave para a mudança de cor */
+    text-align: center;
 }
 
 .App-header nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Cor de fundo ao passar o mouse */
+    background-color: rgba(255, 255, 255, 0.2); /* Cor de fundo ao passar o mouse */
 }
 
 .App-content {
-  flex: 1;
-  padding: 40px;
-  box-sizing: border-box;
+    flex: 1;
+    padding: 40px;
+    box-sizing: border-box;
 }
 
 /* Estilos para formulários */
@@ -83,3 +90,46 @@ form button:hover {
     background-color: #4f76bb;
 }
 
+/* Estilos para a lista de produtos */
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os cards */
+}
+
+.product-card {
+    background-color: rgb(239, 239, 239);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-bottom: 10px; /* Adiciona uma leve distância entre os cards */
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-card p {
+    margin: 4px 0;
+}
+
+/* Estilos para mensagens */
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid;
+}
+
+.message.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border-color: #d6e9c6;
+}
+
+.message.error {
+    background-color: #f2dede;
+    color: #a94442;
+    border-color: #ebccd1;
+}

@@ -25,11 +25,11 @@ function ProductList() {
             <h1>Lista de produtos</h1>
             <ul>
                 {products.map(product => (
-                    <li key={product.id}>
-                        ID: {product.id} <br/> 
-                        Nome: {product.nome} <br/>
-                        Preço: R${product.preco} <br/>
-                    </li>
+                    <div key={product.id} className='product-card'>
+                        <p><strong>ID:</strong>{product.id}</p>
+                        <p><strong>Nome:</strong>{product.nome}</p>
+                        <p><strong>Preço:</strong>{product.preco}</p>
+                    </div>
                 ))}
             </ul>
         </div>

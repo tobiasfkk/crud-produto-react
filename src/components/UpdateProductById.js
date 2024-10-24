@@ -5,7 +5,8 @@ function UpdateProductById() {
     const [id, setId] = useState('');
     const [nome, setNome] = useState('');
     const [preco, setPreco] = useState('');
-    const [message, setMessage] = useState(''); // Estado para armazenar a mensagem
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -16,12 +17,14 @@ function UpdateProductById() {
                 preco: preco
             });
             console.log('Produto atualizado:', response.data);
-            setMessage('Produto atualizado com sucesso!'); // Define a mensagem de sucesso
+            setSuccessMessage('Produto atualizado com sucesso!'); // Define a mensagem de sucesso
+            setErrorMessage(''); // Limpa a mensagem de erro
             setId(''); // Limpa o campo ID
             setNome(''); // Limpa o campo nome
             setPreco(''); // Limpa o campo preço
         } catch (error) {
-            setMessage('Erro ao atualizar produto.'); // Define a mensagem de erro
+            setErrorMessage('Erro ao atualizar produto.'); // Define a mensagem de erro
+            setSuccessMessage(''); // Limpa a mensagem de sucesso
             console.error('Erro ao atualizar produto:', error);
         }
     };
@@ -44,7 +47,8 @@ function UpdateProductById() {
                 </div>
                 <button type="submit">Atualizar</button>
             </form>
-            {message && <p className="message">{message}</p>} {/* Exibe a mensagem condicionalmente */}
+            {successMessage && <p className="message success">{successMessage}</p>}
+            {errorMessage && <p className="message error">{errorMessage}</p>}
         </div>
     );
 }
